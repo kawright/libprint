@@ -9,7 +9,8 @@ CC := gcc
 CC_OPTS := \
 	-Wall \
 	-Werror \
-	-fpic
+	-fpic \
+	-g
 
 # ----- REAL TARGETS -----
 
@@ -18,7 +19,7 @@ build/lib/libprint.so: build/obj/print.o
 	@${CC} -shared -o $@ $<
 	@echo "Built target $@"
 
-build/obj/print.o: print.c print.h
+build/obj/print.o: print.c print.h Makefile
 	@mkdir -p build/obj
 	@${CC} ${CC_OPTS} -c -o $@ $<
 	@echo "Built target $@"
