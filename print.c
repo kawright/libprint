@@ -1,9 +1,16 @@
 #include "print.h"
 
 #include <core.h>
+#include <str.h>
 
 #include <stdarg.h>
 #include <stdio.h>
+
+Void print_ellipsis(Ch *str, U64 max) {
+    printf(str);
+    if (str_len(str) > max)
+        printf("...");
+}
 
 Void print_err_fmt(Ch *str, ...) {
     va_list args;

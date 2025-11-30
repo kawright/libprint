@@ -7,6 +7,10 @@
 
 #include <stdarg.h>
 
+/* Print a string to 'stdout', appending an ellipsis if it exceeds 'max' chars
+in length. */
+Void print_ellipsis(Ch *str, U64 max);
+
 /* Print a formatted string to 'stderr'. */
 Void print_err_fmt(Ch *str, ...);
 
